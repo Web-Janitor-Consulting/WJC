@@ -1,35 +1,43 @@
 {
-  "name": "eleventy-base-blog",
-  "version": "5.0.2",
-  "description": "A starter repository for a blog web site using the Eleventy static site generator.",
-  "scripts": {
-    "build": "eleventy",
-    "watch": "eleventy --watch",
-    "serve": "eleventy --serve",
-    "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
-  },
-  "author": {
-    "name": "Zach Leatherman",
-    "email": "zachleatherman@gmail.com",
-    "url": "https://zachleat.com/"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
-  },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-navigation": "^0.3.2",
-    "@11ty/eleventy-plugin-rss": "^1.1.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
-    "luxon": "^1.26.0",
-    "markdown-it": "^12.1.0",
-    "markdown-it-anchor": "^8.1.2"
-  }
+    "name": "webjanitor",
+    "version": "1.0.0",
+    "description": "Web Janitor Consulting website.",
+    "main": "index.js",
+    "scripts": {
+        "dev:clean": "rm -rf _site && mkdir -p _site/assets",
+        "dev:11ty": "eleventy --port 8080 --serve --incremental",
+        "dev:css": "postcss assets/css/index.css -m -o _site/assets/css/main.css -w",
+        "dev:watchers": "run-p dev:css dev:11ty",
+        "dev": "run-s dev:clean dev:watchers",
+        "prod": "run-s  prod:css prod:11ty",
+        "prod:css": "postcss assets/css/index.css -m -o _site/assets/css/main.css",
+        "prod:11ty": "eleventy"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ https://github.com/Web-Janitor-Consulting/WJC.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": " https://github.com/Web-Janitor-Consulting/WJC/issues"
+    },
+    "homepage": " https://github.com/Web-Janitor-Consulting/WJC#readme",
+    "devDependencies": {
+        "@11ty/eleventy": "^2.0.0-canary.16",
+        "@11ty/eleventy-fetch": "^3.0.0",
+        "@11ty/eleventy-navigation": "^0.3.5",
+        "@11ty/eleventy-plugin-rss": "^1.2.0",
+        "cssnano": "^5.1.13",
+        "dotenv": "^16.0.3",
+        "eleventy-plugin-metagen": "^1.7.11",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.4.16",
+        "postcss-cli": "^10.0.0",
+        "postcss-custom-properties": "^12.1.9",
+        "postcss-import": "^15.0.0",
+        "postcss-nested": "^6.0.0",
+        "postcss-preset-env": "^7.8.2"
+    }
 }

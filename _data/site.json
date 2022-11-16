@@ -1,0 +1,22 @@
+{
+    "title": "Web Janitor Consulting",
+    "tagline": "Demystifying the Internet and World Wide Web.",
+    "url": "https://www.webjanitor.consulting",
+    "language": "en",
+    "description": "Demystifying the Internet and World Wide Web.",
+    "feed": {
+        "subtitle": "Full Feed",
+        "filename": "feed.xml",
+        "path": "/feed/feed.xml",
+        "id": "https://webjanitor.consulting"
+    },
+    "jsonfeed": {
+        "path": "/feed/feed.json",
+        "url": "https://www.michaelbishop.me/feed/feed.json"
+    },
+    "author": {
+        "name": "Michael Bishop",
+        "email": "michael@webjanitor.consulting",
+        "url": "https://www.michaelbishop.me/bio"
+    }
+}

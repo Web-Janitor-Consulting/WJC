@@ -16,10 +16,6 @@
     flex-grow: 2;
   }
 
-  .tagline {
-    margin: 0 0 0 3rem;
-  }
-
   .mainnav{
     margin-right: 3rem;
     transform: rotate(-2deg);

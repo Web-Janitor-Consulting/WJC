@@ -1,0 +1,43 @@
+.site {
+    margin: 0 3em;
+  }
+
+  h1 {
+    margin: 0;
+  }
+  
+  .mainheader {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .site-branding {
+    flex-grow: 2;
+  }
+
+  .tagline {
+    margin: 0 0 0 3rem;
+  }
+
+  .mainnav{
+    margin-right: 3rem;
+    transform: rotate(-2deg);
+  }
+
+  .primary-img {
+    margin-inline: auto;
+    width: clamp(16rem, 93vw, 75rem);
+    height: auto;
+    max-width: 75ch;
+    display: flex;
+    justify-content: center;
+
+
+  svg {
+    width: 60%;
+    height: auto;
+    transform: rotate(-1deg);
+    align-self: center;
+  }
+}

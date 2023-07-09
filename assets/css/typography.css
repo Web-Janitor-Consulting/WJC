@@ -21,3 +21,20 @@ body {
 .mainnav {
     font-size: 1.6rem;
 }
+
+.loud {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.thoughts li {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    list-style-image: url(/assets/img/asterisk.svg);
+}
+
+.home article {
+ line-height: 1.7;
+ font-size: 1.5rem;   
+}

@@ -3,20 +3,33 @@
 
 {% include "head.html" %}
 
-<body>
+<body class="home">
     <div class="site">
         {% include "header.html" %}
         <main class="content">
             <div class="primary-img">
                 {% include "bucket-sign.html" %}
             </div>
+            <article>
+                <p>
+                    Whether you're a new business looking to establish a web presence that you can grow with or you're an established company not getting the results you want from your current site, we can help.
+                </p>
+            </article>
+            <section class="thoughts">
+                <p class="loud">When all you have is a hammer, everything is a nail.</p>
+                <ul>
+                    <li>create buy in</li>
+                    <li>minimize friction</li>
+                    <li>measurable outcomes</li>
+
+                </ul>
+                <p class="loud circled">Reduce technical debt.</p>
+            </section>
+
+
         </main>
 
-        <footer class="colophon">
-            <p>
-
-            </p>
-        </footer>
+        {% include "footer.html" %}
     </div>
 </body>
 

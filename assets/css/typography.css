@@ -1,0 +1,23 @@
+body {
+     font-family: var(--font-base);
+    font-weight: var(--font-weight-base);
+    font-style: normal;
+}
+
+.site-branding {
+
+    h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 3rem;
+ }
+}
+
+ .tagline {
+    font-size: 1.5rem;
+ }
+
+
+.mainnav {
+    font-size: 1.6rem;
+}

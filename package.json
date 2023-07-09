@@ -8,7 +8,7 @@
         "dev:11ty": "eleventy --port 8080 --serve --incremental",
         "dev:css": "postcss assets/css/index.css -m -o _site/assets/css/main.css -w",
         "dev:watchers": "run-p dev:css dev:11ty",
-        "dev": "run-s dev:clean dev:watchers",
+        "dev": "run-s dev:watchers",
         "prod": "run-s  prod:css prod:11ty",
         "prod:css": "postcss assets/css/index.css -m -o _site/assets/css/main.css",
         "prod:11ty": "eleventy"
@@ -25,19 +25,27 @@
     },
     "homepage": " https://github.com/Web-Janitor-Consulting/WJC#readme",
     "devDependencies": {
-        "@11ty/eleventy": "^2.0.0-canary.16",
+        "@11ty/eleventy": "^2.0.0",
         "@11ty/eleventy-fetch": "^3.0.0",
+        "@11ty/eleventy-img": "^2.0.1",
         "@11ty/eleventy-navigation": "^0.3.5",
         "@11ty/eleventy-plugin-rss": "^1.2.0",
         "cssnano": "^5.1.13",
         "dotenv": "^16.0.3",
         "eleventy-plugin-metagen": "^1.7.11",
+        "markdown-it": "^13.0.1",
+        "markdown-it-footnote": "^3.0.3",
         "npm-run-all": "^4.1.5",
+        "outdent": "^0.8.0",
         "postcss": "^8.4.16",
         "postcss-cli": "^10.0.0",
+        "postcss-combine-duplicated-selectors": "^10.0.3",
         "postcss-custom-properties": "^12.1.9",
         "postcss-import": "^15.0.0",
         "postcss-nested": "^6.0.0",
         "postcss-preset-env": "^7.8.2"
+    },
+    "dependencies": {
+        "eleventy-xml-plugin": "^0.1.0"
     }
 }

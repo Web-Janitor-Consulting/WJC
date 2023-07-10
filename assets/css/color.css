@@ -14,3 +14,9 @@
  #Web-Janitor-Fill {
     fill: none;
  }
+
+ .circled {
+    border-radius: 50%;
+    border: 3px solid var(--dark-gray);
+    padding: 2rem;
+ }

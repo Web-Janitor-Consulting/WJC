@@ -1,5 +1,7 @@
 .site {
-    margin: 0 3em;
+    margin-inline: auto;
+  width: clamp(16rem, 93vw, 75rem);
+  
   }
 
   h1 {
@@ -14,10 +16,6 @@
 
   .site-branding {
     flex-grow: 2;
-  }
-
-  .tagline {
-    margin: 0 0 0 3rem;
   }
 
   .mainnav{
@@ -40,4 +38,31 @@
     transform: rotate(-1deg);
     align-self: center;
   }
+}
+
+.thoughts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    p {
+        align-self: center;
+        text-align: center;
+    }
+}
+
+.thoughts > *:first-child {
+    transform: rotate(-5deg);
+}
+
+@media (min-width: 550px) {
+    .thoughts > *:first-child {
+    width: 25%;
+    }
+}
+
+.home article {
+    margin-inline: auto;
+  width: clamp(16rem, 93vw, 75rem);
+  max-width: 50ch;
 }

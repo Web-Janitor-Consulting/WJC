@@ -1,8 +1,9 @@
 .site {
     margin-inline: auto;
   width: clamp(16rem, 93vw, 75rem);
-  
   }
+
+
 
   h1 {
     margin: 0;
@@ -41,6 +42,7 @@
 }
 
 .thoughts {
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

@@ -13,9 +13,15 @@
     }
 }
 
+.www {
+    animation: fadeIn 10s forwards;
+    animation-delay: .5s;
+    opacity: 0;
+}
+
 .bucket {
     animation: fadeIn 11s forwards;
-    animation-delay: .5s;
+    animation-delay: 1.5s;
     opacity: 0;
 }
 
@@ -25,9 +31,26 @@
     opacity: 0;  
 }
 
-.puddles {
+.code {
+    animation: fadeIn 8s forwards;
+    animation-delay: .5s;
+    opacity: 0;
+}
+.puddle {
     animation: fadeIn 8s forwards;
     animation-delay: 4s;
+    opacity: 0;
+}
+
+.drops {
+    animation: fadeIn 7s forwards;
+    animation-delay: 5s;
+    opacity: 0;
+}
+
+.caution {
+    animation: fadeIn 7s forwards;
+    animation-delay: 5.5s;
     opacity: 0;
 }
 

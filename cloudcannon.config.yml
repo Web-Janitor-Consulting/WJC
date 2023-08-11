@@ -1,0 +1,33 @@
+source: _site
+paths:
+  data: _data
+  collections: ''
+  layouts: _includes
+  static: ''
+  uploads: uploads
+  includes: _includes
+  pages: ''
+collections_config:
+  data:
+    path: _data
+    output: false
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  pages:
+    output: true
+    filter: strict
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+_enabled_editors:
+  - content
+  - data
+_inputs: {}
+_select_data: {}
+_structures: {}
+_editables: {}
+data_config: {}
+timezone: Etc/GMT-4

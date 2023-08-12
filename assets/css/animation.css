@@ -13,33 +13,57 @@
     }
 }
 
+@keyframes red_fill {
+    0% {
+        fill: transparent;
+    }
+    100% {
+        fill: #d2202e;
+    }
+}
+
+@keyframes black_fill {
+    0% {
+        fill: transparent;
+    }
+    100% {
+        fill: #000
+    }   
+}
+
+@keyframes dash {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
 .www {
-    animation: fadeIn 10s forwards;
-    animation-delay: .5s;
-    opacity: 0;
+    animation: red_fill 10s linear forwards;
 }
 
 .bucket {
-    animation: fadeIn 11s forwards;
-    animation-delay: 1.5s;
-    opacity: 0;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 5s linear alternate forwards, black_fill 10s ease-in forwards;
 }
 
 .sign {
-    animation: fadeIn 9s forwards;
-    animation-delay: 2s;
-    opacity: 0;  
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 5s linear alternate forwards, black_fill 10s ease-in forwards;
 }
 
 .code {
-    animation: fadeIn 8s forwards;
-    animation-delay: .5s;
-    opacity: 0;
+    animation: red_fill 10s ease-in forwards;
 }
+
 .puddle {
-    animation: fadeIn 8s forwards;
-    animation-delay: 4s;
-    opacity: 0;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 5s linear alternate forwards, black_fill 10s ease-in forwards;
 }
 
 .drops {

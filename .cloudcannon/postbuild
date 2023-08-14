@@ -1,3 +1,3 @@
 #!/bin/bash
 
-postcss assets/css/index.css -m -o _site/assets/css/main.css
+# postcss assets/css/index.css -m -o _site/assets/css/main.css

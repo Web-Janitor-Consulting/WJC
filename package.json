@@ -11,7 +11,8 @@
         "dev": "run-s dev:watchers",
         "prod": "run-s  prod:css prod:11ty",
         "prod:css": "postcss assets/css/index.css -m -o _site/assets/css/main.css",
-        "prod:11ty": "eleventy"
+        "prod:11ty": "eleventy",
+        "build": "run-s prod"
     },
     "repository": {
         "type": "git",

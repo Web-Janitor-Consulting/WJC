@@ -10,7 +10,7 @@ paths:
 collections_config:
   data:
     path: _data
-    output: false
+    output: true
     icon: notes
     disable_add: false
     disable_add_folder: false

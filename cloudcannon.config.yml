@@ -10,7 +10,7 @@ paths:
 collections_config:
   data:
     path: _data
-    output: true
+    output: false
     icon: notes
     disable_add: false
     disable_add_folder: false
@@ -29,5 +29,6 @@ _inputs: {}
 _select_data: {}
 _structures: {}
 _editables: {}
-data_config: {}
+data_config:
+  - meta
 timezone: Etc/GMT-4

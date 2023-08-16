@@ -20,8 +20,16 @@
   }
 
   .mainnav{
-    margin-right: 3rem;
+      background-image: url(/assets/img/coffee_transparent2.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 250px;
+      width: 15rem;
     transform: rotate(-2deg);
+  }
+
+  .mainnav ul {
+    padding: 6rem 0 0 6rem;
   }
 
   .primary-img {

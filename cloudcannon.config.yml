@@ -1,4 +1,4 @@
-source: _site
+
 paths:
   data: _data
   collections: ''
@@ -29,6 +29,5 @@ _inputs: {}
 _select_data: {}
 _structures: {}
 _editables: {}
-data_config:
-  - meta
+data_config: {}
 timezone: Etc/GMT-4

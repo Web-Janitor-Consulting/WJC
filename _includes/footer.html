@@ -1,8 +1,19 @@
 <footer class="colophon">
-  
-<p>
-    <nav class="secondary-nav" role="navigation">					
-						{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
-    </nav>
-</p>
+    <div class="footer-rule" aria-hidden="true"></div>
+
+    <div class="footer-body">
+        <div class="footer-illustration" aria-hidden="true">
+            {% include "bucket-sign.html" %}
+        </div>
+
+        <div class="footer-content">
+            <p class="footer-signoff">Built by hand. No&nbsp;templates were&nbsp;harmed.</p>
+
+            <nav class="footer-nav" aria-label="Footer">
+                {{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
+            </nav>
+
+            <p class="footer-copyright">&copy; {{ "now" | date: "%Y" }} {{ site.title }}</p>
+        </div>
+    </div>
 </footer>

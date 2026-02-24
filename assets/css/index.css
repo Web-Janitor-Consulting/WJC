@@ -1,7 +1,10 @@
-
 @import "remedy";
 @import "variables";
 @import "layout";
+@import "header";
 @import "typography";
 @import "color";
 @import "animation";
+@import "contact";
+@import "footer";
+@import "doodles";

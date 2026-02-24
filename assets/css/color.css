@@ -1,21 +1,46 @@
- body {
-   background-image: linear-gradient(90deg, transparent 0%, transparent 12%, rgb(243,197,147) 12%, rgb(243,197,147) calc(12% + 2px), transparent calc(12% + 2px), transparent calc(12% + 6px), rgb(243,197,147) calc(12% + 6px), rgb(243,197,147) calc(12% + 8px), transparent calc(12% + 8px), transparent 100%), linear-gradient(180deg, rgb(251,238,159) 12%, transparent 12%), repeating-linear-gradient(180deg, rgb(201,215,152) 0px, rgb(201,215,152) 2px, transparent 2px, transparent 32px), linear-gradient(rgb(251,238,159),rgb(251,238,159));
-    color: var(--dark-gray);
- }
+body {
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 12%,
+      rgb(243, 197, 147) 12%,
+      rgb(243, 197, 147) calc(12% + 2px),
+      transparent calc(12% + 2px),
+      transparent calc(12% + 6px),
+      rgb(243, 197, 147) calc(12% + 6px),
+      rgb(243, 197, 147) calc(12% + 8px),
+      transparent calc(12% + 8px),
+      transparent 100%
+    ),
+    linear-gradient(180deg, rgb(251, 238, 159) 100px, transparent 80px),
+    repeating-linear-gradient(
+      180deg,
+      rgb(201, 215, 152) 0px,
+      rgb(201, 215, 152) 2px,
+      transparent 2px,
+      transparent 32px
+    ),
+    linear-gradient(rgb(251, 238, 159), rgb(251, 238, 159));
+  color: var(--dark-gray);
+  position: relative;
+}
 
- a:link {
-   color: var(--dark-gray);
- }
+a:link {
+  color: var(--dark-gray);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--margin-red);
+}
 
- a:visited {
-   color: var(--very-dark-gray);
- }
+a:visited {
+  color: var(--very-dark-gray);
+}
 
- .circled {
-    border-radius: 50%;
-    border: 3px solid var(--dark-gray);
-    padding: 2rem;
- }
+a:hover {
+  color: var(--margin-red);
+  text-decoration: none;
+}
 
- .colophon {
- }
+.colophon {
+}

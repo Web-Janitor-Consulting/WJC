@@ -1,0 +1,141 @@
+/* ===================================================
+   Footer / Colophon
+   Bottom of the legal pad — scribble divider,
+   bucket-sign illustration on the left, content right.
+   =================================================== */
+
+.colophon {
+  margin-block-start: auto;
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+/* --- Scribble divider using the existing doodle asset --- */
+.footer-rule {
+  max-width: 16rem;
+  height: 20px;
+  margin-inline: auto;
+  margin-block-end: clamp(1.5rem, 3vw, 2rem);
+  background: url("/assets/img/doodles/scribble-line.svg") center / contain
+    no-repeat;
+  opacity: 0.55;
+}
+
+/* --- Body: illustration left, content right --- */
+.footer-body {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+/* --- Bucket-sign illustration — static, no animation --- */
+.footer-illustration {
+  flex: 0 0 28%;
+  max-width: 10rem;
+}
+
+.footer-illustration svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Kill all animations — show final drawn/filled state */
+.footer-illustration .bucket,
+.footer-illustration .sign,
+.footer-illustration .puddle {
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  fill: #000;
+  animation: none;
+}
+
+.footer-illustration .www,
+.footer-illustration .code {
+  fill: #d2202e;
+  animation: none;
+}
+
+.footer-illustration .drops,
+.footer-illustration .caution,
+.footer-illustration .raw {
+  opacity: 1;
+  animation: none;
+}
+
+/* --- Content column --- */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* --- Sign-off quip --- */
+.footer-signoff {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  color: var(--gray);
+  margin: 0;
+  line-height: var(--rule);
+}
+
+/* --- Nav links — mirrors .mainnav style --- */
+.footer-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-nav li {
+  list-style: none;
+}
+
+.footer-nav a {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--dark-gray);
+  padding: 0.15rem 0;
+}
+
+.footer-nav a:hover {
+  color: var(--margin-red);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--margin-red);
+}
+
+/* --- Copyright --- */
+.footer-copyright {
+  font-size: 0.75rem;
+  color: var(--light-gray);
+  margin: 0;
+  line-height: var(--rule);
+}
+
+/* --- Mobile: stack vertically, center illustration --- */
+@media (max-width: 640px) {
+  .footer-body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-illustration {
+    flex-basis: auto;
+    max-width: 6rem;
+  }
+
+  .footer-content {
+    align-items: center;
+  }
+
+  .footer-nav ul {
+    justify-content: center;
+  }
+}

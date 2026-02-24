@@ -6,34 +6,91 @@
 <body class="home">
     <div class="site">
         {% include "header.html" %}
-        <main class="content">
-            <div class="primary-img">
-                {% include "bucket-sign.html" %}
-            </div>
-            <article>
-                <h2>Obligatory Marketing Copy</h2>
-                <p>
-                    We are looking to partner with agencies and teams to improve outcomes. We offer opportunities to handle maintanance and support, as well as new development. Additionally, we can help with training and mentoring to help your team grow.
-                </p>
-                <h2>Real Talk</h2>
-                <p>
-                    You have a mess and don't know where to start. You are tired of putting on band-aids and bolting stuff on. You don't really want to bring someone on full time, but you need someone to help you get out of the hole you are in and help right the ship. That's
-                    where we come in.
-                </p>
-            </article>
-            <h2>How</h2>
-            <section class="thoughts">
-
-                <p class="loud">When all you have is a hammer, everything is a nail.</p>
-                <ul>
-                    <li>create buy in</li>
-                    <li>minimize friction</li>
-                    <li>measurable outcomes</li>
-
-                </ul>
-                <p class="loud circled">Reduce technical debt.</p>
+        <main class="home">
+            <section class="hero">
+                <div class="hero-intro">
+                    <p class="eyebrow">Web strategy for the rest of us</p>
+                    <h2>You know you need a website. We’ll figure out the rest.</h2>
+                    <p class="lede">Maybe it’s a new site, maybe it’s the one you’ve been ignoring for three years.
+                        Either way, we build fast, reliable web things tailored to what you actually need—not what some
+                        template thinks you do.</p>
+                    <ul class="hero-checklist">
+                        <li>No idea where to start? Perfect. That’s literally the job.</li>
+                        <li>Custom builds that load fast and don’t break when you sneeze.</li>
+                        <li>Tech integrations that talk to each other without a translator.</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a class="button" href="/contact/">Let's talk</a>
+                    </div>
+                </div>
+                <figure class="hero-illustration">
+                    {% include "bucket-sign.html" %}
+                </figure>
             </section>
 
+            <section class="section section-areas doodle doodle-arrow-curved" id="what">
+                <header>
+                    <p class="section-eyebrow">What we actually do</p>
+                    <h2 class="section-title">Websites, integrations, and the stuff in between</h2>
+                </header>
+                <div class="section-body">
+                    <ul class="list-cards">
+                        <li>
+                            <h3>Websites that work</h3>
+                            <p>Fast, accessible sites built around your goals—not a page-builder’s opinion. Performance
+                                isn’t a feature, it’s the baseline.</p>
+                        </li>
+                        <li>
+                            <h3>Tech that connects</h3>
+                            <p>CRM, email, payments, scheduling—whatever tools run your business, we make them play nice
+                                so you stop copy-pasting between tabs.</p>
+                        </li>
+                        <li>
+                            <h3>A plan you can follow</h3>
+                            <p>We leave documentation, not mystery. You’ll know what was built, why, and how to keep it
+                                running without us on speed dial.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section section-process doodle doodle-checkmark" id="how">
+                <header>
+                    <p class="section-eyebrow">How this works</p>
+                    <h2 class="section-title">From “I don’t know” to “oh, that’s it?”</h2>
+                </header>
+                <ol class="process-steps">
+                    <li>
+                        <h3>The brain dump</h3>
+                        <p>Tell us everything—or nothing. We ask good questions and figure out what you actually need
+                            vs. what you think you need.</p>
+                    </li>
+                    <li>
+                        <h3>The blueprint</h3>
+                        <p>We scope it out in plain language. No jargon invoices. You’ll know exactly what’s getting
+                            built and what it costs.</p>
+                    </li>
+                    <li>
+                        <h3>The build</h3>
+                        <p>We ship in chunks you can see and touch. Feedback loops, not big reveals. Nothing goes live
+                            until you’re happy.</p>
+                    </li>
+                    <li>
+                        <h3>The handoff</h3>
+                        <p>You get the keys, the docs, and the confidence to run it. We stick around for questions
+                            because we’re not monsters.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="section section-cta">
+                <h2 class="section-title">You don’t need to have it figured out</h2>
+                <p>“I need a website and I don’t know where to start” is a perfectly valid brief. We’ll take it from
+                    there.</p>
+                <div class="cta-actions">
+                    <a class="button" href="/contact/">Start a conversation</a>
+                </div>
+            </section>
 
         </main>
 

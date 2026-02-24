@@ -1,39 +1,64 @@
-/*
-    Header
-*/
+/* ===================================================
+   Header - Pad-style top of page
+   Sits above the grid, aligned to the writing area.
+   =================================================== */
 
 .mainheader {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem 2rem;
+  padding: 1.5rem clamp(0.5rem, 2vw, 1.5rem) 1.5rem;
+  padding-left: calc(clamp(1rem, 4%, 3rem) + clamp(0.5rem, 2vw, 1.5rem));
 }
 
-
+.site-branding h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  white-space: nowrap;
+}
 
 .mainnav ul {
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    font-size: 1.6rem;
-    line-height: 1.6rem;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.mainnav ul li {
-    list-style-type: none;
+.mainnav li {
+  list-style: none;
 }
 
 .mainnav a {
-    margin-right: .5em;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--dark-gray);
+  position: relative;
+  padding: 0.15rem 0;
 }
 
-@media (min-width: 550px) {
-    .mainheader {
-        
-    }
+.mainnav a:hover {
+  color: var(--margin-red);
+  background: none;
+}
 
-    .mainnav a {
-        
-    }
+/* Active nav link */
+.mainnav a[aria-current="page"] {
+  color: var(--margin-red);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 4px;
+}
+
+/* Mobile header */
+@media (max-width: 640px) {
+  .mainheader {
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

@@ -1,4 +1,4 @@
-module.exports = (ctx) => ({
+export default (ctx) => ({
     map: ctx.options.map,
     plugins: {
         'postcss-import': { path: 'assets/css' },

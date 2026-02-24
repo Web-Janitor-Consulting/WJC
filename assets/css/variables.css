@@ -1,12 +1,16 @@
 :root {
-    --very-dark-gray: #101b39;
-    --dark-gray: #333136;
-    --gray: #6f6d72;
-    --light-gray: #b4b1b8;
-    --very-light-gray: #e9e8ee;
-    --yellow: #fecf48;
-    --light-yellow: #FEEDB9;
-    --font-base: realist, sans-serif;
-    --font-heading: sketchnote-text, sans-serif;
-    --font-weight-base: 600;
- }
+  --very-dark-gray: #101b39;
+  --dark-gray: #333136;
+  --medium-gray: #5a575e;
+  --gray: #6f6d72;
+  --light-gray: #b4b1b8;
+  --very-light-gray: #e9e8ee;
+  --yellow: #fecf48;
+  --light-yellow: #feedb9;
+  --legal-pad-yellow: #fbee9f;
+  --margin-red: #d2202e;
+  --font-base: realist, sans-serif;
+  --font-heading: sketchnote-text, sans-serif;
+  --font-weight-base: 600;
+  --rule: 2rem; /* 32px — matches ruled-line spacing */
+}

@@ -1,0 +1,77 @@
+/* ===================================================
+   Contact Form
+   =================================================== */
+
+.contact-page {
+  max-width: 36rem;
+  margin-inline: auto;
+  padding-block: clamp(2rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem);
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+.contact-header {
+  margin-block-end: calc(var(--rule) * 1.5);
+}
+
+.contact-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-block-end: 0.5rem;
+}
+
+.contact-header p {
+  color: var(--medium-gray);
+  max-width: 32rem;
+}
+
+/* --- Form fields --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--rule) * 0.75);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-field label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+}
+
+.form-field input,
+.form-field textarea {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  font-weight: var(--font-weight-base);
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  background: transparent;
+  color: var(--very-dark-gray);
+  transition: border-color 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--margin-red);
+}
+
+.form-field textarea {
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  resize: vertical;
+}
+
+/* Honeypot */
+.hidden {
+  display: none;
+}
+
+.form-actions {
+  margin-block-start: 0.5rem;
+}

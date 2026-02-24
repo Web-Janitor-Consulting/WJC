@@ -1,11 +1,11 @@
-const fs = require("fs");
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
-const metagen = require('eleventy-plugin-metagen');
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+import fs from "fs";
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import { EleventyRenderPlugin } from "@11ty/eleventy";
+import metagen from 'eleventy-plugin-metagen';
+import pluginRss from "@11ty/eleventy-plugin-rss";
 
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets/img");
 
     eleventyConfig.addPlugin(eleventyNavigationPlugin);

@@ -1,85 +1,83 @@
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        
-    }
-    50% {
-        opacity: .5;
-        
-    }
-    100% {
-        opacity: 1;
-        
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes red_fill {
-    0% {
-        fill: transparent;
-    }
-    100% {
-        fill: #d2202e;
-    }
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: #d2202e;
+  }
 }
 
 @keyframes black_fill {
-    0% {
-        fill: transparent;
-    }
-    100% {
-        fill: #000
-    }   
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: #000;
+  }
 }
 
-@keyframes dash {
-    from {
-      stroke-dashoffset: 1;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
   }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 
 .www {
-    animation: red_fill 10s linear forwards;
+  animation: red_fill 8s ease-out forwards;
+  animation-delay: 4s;
 }
 
 .bucket {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: dash 5s linear alternate forwards, black_fill 10s ease-in forwards;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 6s ease-out forwards, black_fill 12s ease-in forwards;
 }
 
 .sign {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: dash 5s linear alternate forwards, black_fill 10s ease-in forwards;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 4s ease-out forwards, black_fill 8s ease-in forwards;
+  animation-delay: 0.3s;
 }
 
 .code {
-    animation: red_fill 10s ease-in forwards;
+  animation: red_fill 10s ease-out forwards;
+  animation-delay: 6s;
 }
 
 .puddle {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: dash 5s linear alternate forwards, black_fill 10s ease-in forwards;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 3s ease-out forwards, black_fill 6s ease-in forwards;
+  animation-delay: 2s;
 }
 
 .drops {
-    animation: fadeIn 7s forwards;
-    animation-delay: 5s;
-    opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+  animation-delay: 7s;
+  opacity: 0;
 }
 
 .caution {
-    animation: fadeIn 7s forwards;
-    animation-delay: 5.5s;
-    opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+  animation-delay: 5.5s;
+  opacity: 0;
 }
 
 .raw {
-    animation: fadeIn 7s forwards;
-    animation-delay: 6s;
-    opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+  animation-delay: 8s;
+  opacity: 0;
 }

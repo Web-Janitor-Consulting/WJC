@@ -4,89 +4,91 @@
 {% include "head.html" %}
 
 <body class="home">
+    <a class="skip-link" href="#main">Skip to main content</a>
     <div class="site">
         {% include "header.html" %}
-        <main class="home">
+        <main id="main" class="home">
             <section class="hero">
-                <div class="hero-intro">
-                    <p class="eyebrow">Web strategy for the rest of us</p>
-                    <h2>You know you need a website. We’ll figure out the rest.</h2>
-                    <p class="lede">Maybe it’s a new site, maybe it’s the one you’ve been ignoring for three years.
-                        Either way, we build fast, reliable web things tailored to what you actually need—not what some
-                        template thinks you do.</p>
-                    <ul class="hero-checklist">
-                        <li>No idea where to start? Perfect. That’s literally the job.</li>
-                        <li>Custom builds that load fast and don’t break when you sneeze.</li>
-                        <li>Tech integrations that talk to each other without a translator.</li>
-                    </ul>
-                    <div class="hero-actions">
-                        <a class="button" href="/contact/">Let's talk</a>
+                <div class="hero-bg" aria-hidden="true"></div>
+                <div class="hero-content">
+                    <div class="hero-intro">
+                        <h2>I build the systems that make your data useful and your operations run.</h2>
+                        <p class="lede">Two decades of open-source development and hands-on web work. I build data
+                            pipelines, custom websites, and technology integrations for organizations that need things
+                            to
+                            actually work—not just look good in a pitch deck.</p>
+                        <ul class="hero-checklist">
+                            <li>Structured data from messy sources—public records, APIs, legacy systems.</li>
+                            <li>Custom web builds that are fast, accessible, and built to last.</li>
+                            <li>Practical AI integration where it earns its place, not where it’s trendy.</li>
+                        </ul>
+                        <div class="hero-actions">
+                            <a class="button" href="/contact/">Let's talk</a>
+                            <a class="button button-outline" href="/services/">What I do</a>
+                        </div>
                     </div>
                 </div>
-                <figure class="hero-illustration">
-                    {% include "bucket-sign.html" %}
-                </figure>
             </section>
 
-            <section class="section section-areas doodle doodle-arrow-curved" id="what">
+            <section class="section section-areas" id="what" aria-labelledby="heading-what">
                 <header>
-                    <p class="section-eyebrow">What we actually do</p>
-                    <h2 class="section-title">Websites, integrations, and the stuff in between</h2>
+                    <p class="section-eyebrow">What I do</p>
+                    <h2 id="heading-what" class="section-title">Websites, data systems, and the integrations that connect them</h2>
                 </header>
                 <div class="section-body">
                     <ul class="list-cards">
                         <li>
-                            <h3>Websites that work</h3>
-                            <p>Fast, accessible sites built around your goals—not a page-builder’s opinion. Performance
-                                isn’t a feature, it’s the baseline.</p>
+                            <h3>Web development</h3>
+                            <p>Performance-first sites and applications built on web standards. Static sites, CMS
+                                platforms, web components—custom work that loads fast and doesn’t need babysitting.</p>
                         </li>
                         <li>
-                            <h3>Tech that connects</h3>
-                            <p>CRM, email, payments, scheduling—whatever tools run your business, we make them play nice
-                                so you stop copy-pasting between tabs.</p>
+                            <h3>Integrations &amp; automation</h3>
+                            <p>Connecting the systems you already use—APIs, data pipelines, scheduled workflows. When AI
+                                can do the job better than a script, I’ll show you how and why.</p>
                         </li>
                         <li>
-                            <h3>A plan you can follow</h3>
-                            <p>We leave documentation, not mystery. You’ll know what was built, why, and how to keep it
-                                running without us on speed dial.</p>
+                            <h3>Strategy &amp; planning</h3>
+                            <p>Clear scoping, honest timelines, and documentation you can actually follow. You’ll
+                                understand what was built and how to maintain it.</p>
                         </li>
                     </ul>
                 </div>
             </section>
 
-            <section class="section section-process doodle doodle-checkmark" id="how">
+            <section class="section section-process" id="how" aria-labelledby="heading-how">
                 <header>
-                    <p class="section-eyebrow">How this works</p>
-                    <h2 class="section-title">From “I don’t know” to “oh, that’s it?”</h2>
+                    <p class="section-eyebrow">How it works</p>
+                    <h2 id="heading-how" class="section-title">Four steps from problem to working system</h2>
                 </header>
                 <ol class="process-steps">
                     <li>
-                        <h3>The brain dump</h3>
-                        <p>Tell us everything—or nothing. We ask good questions and figure out what you actually need
-                            vs. what you think you need.</p>
+                        <h3>Discovery</h3>
+                        <p>I ask questions and listen. The goal is to understand what you actually need—not what you
+                            think you need. A rough idea is enough to start.</p>
                     </li>
                     <li>
-                        <h3>The blueprint</h3>
-                        <p>We scope it out in plain language. No jargon invoices. You’ll know exactly what’s getting
-                            built and what it costs.</p>
+                        <h3>Scope</h3>
+                        <p>A clear plan in plain language—what gets built, in what order, and what it costs. No jargon,
+                            no surprises.</p>
                     </li>
                     <li>
-                        <h3>The build</h3>
-                        <p>We ship in chunks you can see and touch. Feedback loops, not big reveals. Nothing goes live
-                            until you’re happy.</p>
+                        <h3>Build</h3>
+                        <p>Incremental delivery you can see and test along the way. Feedback at every stage, not a big
+                            reveal at the end.</p>
                     </li>
                     <li>
-                        <h3>The handoff</h3>
-                        <p>You get the keys, the docs, and the confidence to run it. We stick around for questions
-                            because we’re not monsters.</p>
+                        <h3>Deliver</h3>
+                        <p>You get the keys, the documentation, and the knowledge to run it. I’m available for questions
+                            after handoff—that’s part of the deal.</p>
                     </li>
                 </ol>
             </section>
 
-            <section class="section section-cta">
-                <h2 class="section-title">You don’t need to have it figured out</h2>
-                <p>“I need a website and I don’t know where to start” is a perfectly valid brief. We’ll take it from
-                    there.</p>
+            <section class="section section-cta" aria-labelledby="heading-cta">
+                <h2 id="heading-cta" class="section-title">Bring the problem. I'll bring the plan.</h2>
+                <p>Whether it’s a new build, a system that needs fixing, or a dataset that needs wrangling—tell me what
+                    you’re working on and we’ll figure out the right approach.</p>
                 <div class="cta-actions">
                     <a class="button" href="/contact/">Start a conversation</a>
                 </div>

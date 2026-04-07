@@ -1,16 +1,46 @@
 :root {
-  --very-dark-gray: #101b39;
-  --dark-gray: #333136;
-  --medium-gray: #5a575e;
-  --gray: #6f6d72;
-  --light-gray: #b4b1b8;
-  --very-light-gray: #e9e8ee;
-  --yellow: #fecf48;
-  --light-yellow: #feedb9;
-  --legal-pad-yellow: #fbee9f;
+  /* --- Slate scale --- */
+  --slate-900: #0f172a;
+  --slate-800: #1e293b;
+  --slate-700: #334155;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  --slate-50: #f8fafc;
+  --white: #ffffff;
+
+  /* --- Green accent --- */
+  --green-800: #166534;
+  --green-700: #15803d;
+  --green-600: #16a34a;
+  --green-100: #dcfce7;
+  --green-50: #f0fdf4;
+
+  /* --- Legacy (bucket-sign SVG only) --- */
   --margin-red: #d2202e;
-  --font-base: realist, sans-serif;
-  --font-heading: sketchnote-text, sans-serif;
-  --font-weight-base: 600;
-  --rule: 2rem; /* 32px — matches ruled-line spacing */
+
+  /* --- Semantic aliases --- */
+  --color-text: var(--slate-700);
+  --color-heading: var(--slate-900);
+  --color-muted: var(--slate-500);
+  --color-border: var(--slate-200);
+  --color-surface: var(--white);
+  --color-bg: var(--slate-50);
+  --color-accent: var(--green-700);
+  --color-accent-hover: var(--green-600);
+
+  /* --- Typography --- */
+  --font-base: "Inter", system-ui, -apple-system, sans-serif;
+  --font-heading: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-weight-base: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* --- Spacing --- */
+  --rule: 2rem; /* 32px — vertical rhythm unit */
+  --radius: 6px;
+  --radius-lg: 10px;
 }

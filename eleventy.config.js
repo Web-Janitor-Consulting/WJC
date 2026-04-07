@@ -7,6 +7,8 @@ import pluginRss from "@11ty/eleventy-plugin-rss";
 
 export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets/img");
+    eleventyConfig.addPassthroughCopy("assets/fonts");
+    eleventyConfig.addPassthroughCopy("assets/js");
 
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(EleventyRenderPlugin);

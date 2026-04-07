@@ -1,26 +1,27 @@
 /* ===================================================
-   Contact Form
+   Contact Form — Clean professional styling
    =================================================== */
 
 .contact-page {
   max-width: 36rem;
   margin-inline: auto;
   padding-block: clamp(2rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem);
-  padding-inline: clamp(1rem, 3vw, 2rem);
+  padding-inline: clamp(1.5rem, 4vw, 3rem);
 }
 
 .contact-header {
   margin-block-end: calc(var(--rule) * 1.5);
 }
 
-.contact-header h2 {
+.contact-header h1 {
   font-family: var(--font-heading);
   font-size: clamp(1.6rem, 4vw, 2.4rem);
   margin-block-end: 0.5rem;
+  color: var(--color-heading);
 }
 
 .contact-header p {
-  color: var(--medium-gray);
+  color: var(--color-muted);
   max-width: 32rem;
 }
 
@@ -40,7 +41,8 @@
 .form-field label {
   font-family: var(--font-heading);
   font-size: 0.95rem;
-  color: var(--dark-gray);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-heading);
 }
 
 .form-field input,
@@ -48,22 +50,32 @@
   font-family: var(--font-base);
   font-size: 1rem;
   font-weight: var(--font-weight-base);
-  padding: 0.6rem 0.75rem;
-  border: 2px solid var(--light-gray);
-  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-  background: transparent;
-  color: var(--very-dark-gray);
-  transition: border-color 0.2s ease;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-heading);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.form-field input:focus,
-.form-field textarea:focus {
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--green-100);
+}
+
+.form-field input:focus:not(:focus-visible),
+.form-field textarea:focus:not(:focus-visible) {
   outline: none;
-  border-color: var(--margin-red);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--green-100);
 }
 
 .form-field textarea {
-  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
   resize: vertical;
 }
 

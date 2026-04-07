@@ -1,81 +1,88 @@
 /* ===================================================
-   Pad Grid Layout
-   Main grid echoes the legal-pad margin gutter.
-   Left column = decorative margin zone.
-   Right column = writing area.
+   Layout — Full-bleed shell, constrained inner content
    =================================================== */
 
+/* --- Skip link — visible only on keyboard focus --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
 .site {
-  margin-inline: auto;
-  width: min(100%, 75rem);
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
   margin: 0;
 }
 
-/* --- Pad grid on .home (main element) --- */
+/* --- Main content area --- */
 .home {
-  --pad-gutter: clamp(1rem, 4%, 3rem);
   display: grid;
-  grid-template-columns: var(--pad-gutter) 1fr;
-  row-gap: calc(var(--rule) * 2);
-  padding-block: clamp(1rem, 3vw, 2rem) clamp(4rem, 8vw, 6rem);
-  padding-inline: clamp(0.5rem, 2vw, 1.5rem);
-}
-
-/* Default: every direct child sits in the content column */
-.home > * {
-  grid-column: 2;
+  row-gap: clamp(4rem, 8vw, 6rem);
+  padding-block: 0 0;
 }
 
 /* ===================================================
-   Hero
-   Spans full grid width to set up its own sub-columns.
+   Hero — full-width, map-backed, commanding presence
    =================================================== */
 .hero {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: var(--pad-gutter) 1fr;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: start;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  isolation: isolate;
+}
+
+/* Map background layer — the visual feature */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/img/map.jpg") center center / cover no-repeat;
+  z-index: -2;
+}
+
+/* Gradient overlay — gentle scrim for text legibility */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15, 23, 42, 0.85) 0%,
+    rgba(15, 23, 42, 0.55) 55%,
+    rgba(15, 23, 42, 0.3) 100%
+  );
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 68rem;
+  margin-inline: auto;
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem)
+    clamp(3rem, 6vw, 5rem);
 }
 
 .hero-intro {
-  grid-column: 2;
   display: flex;
   flex-direction: column;
-  gap: var(--rule);
+  gap: 1.25rem;
   max-width: 40rem;
-}
-
-.hero-illustration {
-  grid-column: 2;
-  justify-self: center;
-  padding: clamp(1rem, 2vw, 1.5rem);
-}
-
-.hero-illustration svg {
-  width: clamp(220px, 30vw, 380px);
-  height: auto;
-}
-
-/* Desktop: intro + illustration side-by-side */
-@media (min-width: 900px) {
-  .hero {
-    grid-template-columns: var(--pad-gutter) 1.1fr 1fr;
-    align-items: center;
-  }
-
-  .hero-intro {
-    grid-column: 2;
-  }
-
-  .hero-illustration {
-    grid-column: 3;
-    grid-row: 1;
-  }
 }
 
 /* --- Hero checklist --- */
@@ -84,101 +91,128 @@ h1 {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0;
+  gap: 0.5rem;
 }
 
 .hero-checklist li {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1.75rem;
   line-height: 1.65;
+  font-size: 0.95rem;
 }
 
 .hero-checklist li::before {
-  content: "\2713";
+  content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  color: var(--margin-red);
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-600);
 }
 
 /* --- Hero actions --- */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 1.5rem;
+  gap: 0.75rem 1rem;
   align-items: center;
+  padding-top: 0.75rem;
 }
 
 /* ===================================================
-   Button — hand-drawn / sketched feel
+   Button — solid, clean
    =================================================== */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.7rem 1.6rem;
+  padding: 0.75rem 1.75rem;
   border: none;
-  border-radius: 0;
-  background: transparent;
-  color: var(--very-dark-gray);
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: var(--white);
   font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
   font-size: 1.05rem;
   text-decoration: none;
-  position: relative;
-  z-index: 0;
-}
-
-/* Sketched border via SVG filter trick */
-.button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2.5px solid var(--very-dark-gray);
-  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-  z-index: -1;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
 }
 
 .button:hover {
-  color: var(--margin-red);
+  background: var(--color-accent-hover);
+  color: var(--white);
+  transform: translateY(-1px);
 }
 
-.button:hover::before {
-  border-color: var(--margin-red);
-  background: rgba(254, 237, 185, 0.35);
+.button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Outline variant */
+.button-outline {
+  background: transparent;
+  border: 1.5px solid currentColor;
+}
+
+.button-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero buttons — light on dark */
+.hero .button {
+  background: var(--white);
+  color: var(--slate-900);
+}
+
+.hero .button:hover {
+  background: var(--green-100);
+  color: var(--green-800);
+}
+
+.hero .button:focus-visible {
+  outline-color: var(--white);
+}
+
+.hero .button-outline {
+  background: transparent;
+  color: var(--slate-300);
+  border-color: var(--slate-400);
+}
+
+.hero .button-outline:hover {
+  color: var(--white);
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .text-link {
   font-family: var(--font-heading);
+  font-weight: var(--font-weight-medium);
   text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: var(--margin-red);
-  color: inherit;
+  text-underline-offset: 3px;
+  color: var(--color-accent);
+}
+
+.text-link:hover {
+  color: var(--color-accent-hover);
 }
 
 /* ===================================================
-   Sections
-   Written directly on the pad — no glass cards.
-   Divided by a sketched scribble line.
+   Sections — centered, self-constrained
    =================================================== */
 .section {
   display: grid;
-  gap: var(--rule);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  max-width: 68rem;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 4vw, 3rem);
   position: relative;
-}
-
-/* Scribble-line divider above each section */
-.section::before {
-  content: "";
-  display: block;
-  width: min(80%, 20rem);
-  height: 4px;
-  background-image: url("/assets/img/doodles/scribble-line.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.5;
 }
 
 .section header {
@@ -192,15 +226,17 @@ h1 {
 }
 
 .section-eyebrow {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-family: var(--font-base);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--medium-gray);
+  color: var(--slate-500);
 }
 
 .section-title {
   text-align: left;
+  color: var(--color-heading);
 }
 
 .section-title::after {
@@ -208,177 +244,88 @@ h1 {
 }
 
 /* ===================================================
-   Sticky-Note Cards
-   Colored squares with a folded corner and subtle shadow.
+   Cards — clean, no-nonsense panels
    =================================================== */
 .list-cards {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: clamp(1.5rem, 3vw, 2rem);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
 }
 
 .list-cards li {
-  --note-bg: #fff9b1;
-  padding: 1.5rem 1.25rem 2rem;
-  background: var(--note-bg);
-  position: relative;
-  transform: rotate(var(--card-tilt, 0deg));
-  transition: transform 0.2s ease;
-  box-shadow:
-    2px 3px 6px rgba(0, 0, 0, 0.12),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.04);
+  padding: 1.75rem 1.5rem;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
 }
 
-/* Folded corner */
+/* Remove folded corner */
 .list-cards li::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 24px;
-  height: 24px;
-  background: linear-gradient(
-    135deg,
-    var(--note-bg) 40%,
-    rgba(0, 0, 0, 0.06) 45%,
-    rgba(0, 0, 0, 0.06) 55%,
-    #f0e68c 60%
-  );
+  display: none;
 }
 
-/* Organic tilt per card */
-.list-cards li:nth-child(odd) {
-  --card-tilt: -1.5deg;
-}
-.list-cards li:nth-child(even) {
-  --card-tilt: 1deg;
-}
-.list-cards li:nth-child(3n) {
-  --card-tilt: -0.5deg;
-}
-
-/* Alternate sticky note colours */
-.list-cards li:nth-child(2) {
-  --note-bg: #c8f7c5;
-}
-.list-cards li:nth-child(2)::after {
-  background: linear-gradient(
-    135deg,
-    #c8f7c5 40%,
-    rgba(0, 0, 0, 0.06) 45%,
-    rgba(0, 0, 0, 0.06) 55%,
-    #a8e6a0 60%
-  );
-}
-.list-cards li:nth-child(3) {
-  --note-bg: #ffd1dc;
-}
-.list-cards li:nth-child(3)::after {
-  background: linear-gradient(
-    135deg,
-    #ffd1dc 40%,
-    rgba(0, 0, 0, 0.06) 45%,
-    rgba(0, 0, 0, 0.06) 55%,
-    #f0b8c8 60%
-  );
-}
-
-.list-cards li:hover {
-  transform: rotate(0deg) translateY(-2px);
-  box-shadow:
-    3px 5px 10px rgba(0, 0, 0, 0.15),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.04);
+.list-cards li h3 {
+  color: var(--slate-900);
 }
 
 /* ===================================================
-   Process Steps
-   Hand-circled numbers, written on the pad.
+   Process Steps — numbered with left accent
    =================================================== */
 .process-steps {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: clamp(1rem, 2.5vw, 1.5rem);
+  gap: 0;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   counter-reset: step;
 }
 
 .process-steps li {
   position: relative;
-  padding: 1rem 1rem 1rem 3rem;
+  padding: clamp(1.25rem, 2vw, 1.75rem) 1.25rem clamp(1.25rem, 2vw, 1.75rem)
+    1.25rem;
+  border-top: 1px solid var(--color-border);
 }
 
 .process-steps li::before {
   counter-increment: step;
-  content: counter(step);
-  position: absolute;
-  left: 0.25rem;
-  top: 0.8rem;
-  width: 2rem;
-  height: 2rem;
-  border: 2.5px solid var(--margin-red);
-  border-radius: 50%;
+  content: counter(step, decimal-leading-zero);
+  display: block;
   font-family: var(--font-heading);
-  display: grid;
-  place-items: center;
-  font-size: 1.05rem;
-  color: var(--margin-red);
-  font-weight: 700;
-  background: transparent;
+  font-weight: var(--font-weight-bold);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--green-700);
+  margin-block-end: 0.75rem;
 }
 
 /* ===================================================
-   CTA — centered, prominent close
+   CTA — full-width band
    =================================================== */
 .section-cta {
-  justify-self: center;
+  max-width: none;
   text-align: center;
-  max-width: 36rem;
-  gap: var(--rule);
-  position: relative;
-}
-
-.section-cta::before {
-  display: none;
-}
-
-/* Coffee stain tucked to the side */
-.section-cta::after {
-  content: "";
-  position: absolute;
-  right: -6rem;
-  top: -2rem;
-  width: 320px;
-  height: 360px;
-  background: url("/assets/img/coffee_transparent2.png") no-repeat center /
-    contain;
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: -1;
-  transform: rotate(-8deg);
-}
-
-@media (max-width: 640px) {
-  .section-cta::after {
-    right: -1rem;
-    top: -1.5rem;
-    width: 90px;
-    height: 100px;
-    opacity: 0.25;
-  }
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+  background: var(--slate-900);
+  color: var(--slate-300);
 }
 
 .section-cta .section-title {
   text-align: center;
+  color: var(--white);
+  max-width: 36rem;
+  margin-inline: auto;
 }
 
 .section-cta p {
-  margin: 0;
-  line-height: var(--rule);
+  margin: 0 auto;
+  max-width: 38rem;
+  line-height: 1.7;
 }
 
 .cta-actions {
@@ -389,34 +336,24 @@ h1 {
   align-items: center;
 }
 
-@media (min-width: 640px) {
-  .cta-actions {
-    flex-direction: row;
-    align-items: center;
-  }
+/* CTA button uses same light-on-dark as hero */
+.section-cta .button {
+  background: var(--white);
+  color: var(--slate-900);
+}
+
+.section-cta .button:hover {
+  background: var(--green-100);
+  color: var(--green-800);
 }
 
 /* ===================================================
-   Mobile — collapse pad gutter, single column
+   Mobile
    =================================================== */
 @media (max-width: 640px) {
-  .home {
-    grid-template-columns: 1fr;
-    padding-inline: clamp(1rem, 4vw, 1.5rem);
-  }
-
-  .home > *,
-  .hero {
-    grid-column: 1;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-intro,
-  .hero-illustration {
-    grid-column: 1;
+  .hero-content {
+    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 3vw, 1.5rem)
+      clamp(2rem, 5vw, 3rem);
   }
 
   .hero-actions {
@@ -428,13 +365,5 @@ h1 {
     width: 100%;
     text-align: center;
     justify-content: center;
-  }
-
-  .list-cards li {
-    transform: none;
-  }
-
-  .section::before {
-    width: 60%;
   }
 }

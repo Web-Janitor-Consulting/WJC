@@ -1,0 +1,81 @@
+/* ===================================================
+   Interior pages — About, Services
+   =================================================== */
+
+/* Shared wrapper for interior page content */
+.content {
+  max-width: 56rem;
+  margin-inline: auto;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem)
+    clamp(4rem, 8vw, 6rem);
+}
+
+/* --- Page header --- */
+.page-header {
+  margin-block-end: clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--color-border);
+  padding-block-end: clamp(1.5rem, 3vw, 2rem);
+}
+
+.page-header h1,
+.page-header h2 {
+  margin-top: 0;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  letter-spacing: -0.02em;
+}
+
+.page-header p {
+  margin-block-start: 0.75rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--color-muted);
+  max-width: 48rem;
+}
+
+/* ===================================================
+   About page
+   =================================================== */
+.about-body p {
+  max-width: 65ch;
+  margin-block: 0;
+  line-height: 1.8;
+}
+
+.about-body p + p {
+  margin-block-start: 1.25rem;
+}
+
+/* ===================================================
+   Services page
+   =================================================== */
+.service-detail {
+  padding-block: clamp(1.25rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service-detail:first-of-type {
+  border-top: 1px solid var(--color-border);
+}
+
+.service-detail h2 {
+  margin-block-end: 0.5rem;
+}
+
+.service-detail p {
+  max-width: 65ch;
+  line-height: 1.8;
+  margin-block: 0;
+}
+
+.service-detail p + p {
+  margin-block-start: 0.75rem;
+}
+
+/* --- Services CTA --- */
+.services-cta {
+  padding-block-start: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.services-cta p {
+  font-size: 1.1rem;
+}

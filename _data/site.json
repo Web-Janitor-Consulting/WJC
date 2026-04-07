@@ -1,9 +1,9 @@
 {
     "title": "Web Janitor Consulting",
-    "tagline": "Internet solutions.",
+    "tagline": "Web development, data systems, and technology consulting.",
     "url": "https://www.webjanitor.consulting",
     "language": "en",
-    "description": "Internet solutions.",
+    "description": "Web development, data systems, and technology consulting. I build data pipelines, custom websites, and integrations for civic tech, nonprofits, and organizations that need things to work.",
     "feed": {
         "subtitle": "Full Feed",
         "filename": "feed.xml",

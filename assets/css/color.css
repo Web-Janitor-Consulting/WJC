@@ -1,46 +1,29 @@
 body {
-  background-image:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      transparent 12%,
-      rgb(243, 197, 147) 12%,
-      rgb(243, 197, 147) calc(12% + 2px),
-      transparent calc(12% + 2px),
-      transparent calc(12% + 6px),
-      rgb(243, 197, 147) calc(12% + 6px),
-      rgb(243, 197, 147) calc(12% + 8px),
-      transparent calc(12% + 8px),
-      transparent 100%
-    ),
-    linear-gradient(180deg, rgb(251, 238, 159) 100px, transparent 80px),
-    repeating-linear-gradient(
-      180deg,
-      rgb(201, 215, 152) 0px,
-      rgb(201, 215, 152) 2px,
-      transparent 2px,
-      transparent 32px
-    ),
-    linear-gradient(rgb(251, 238, 159), rgb(251, 238, 159));
-  color: var(--dark-gray);
-  position: relative;
+  background: var(--white);
+  color: var(--color-text);
 }
 
 a:link {
-  color: var(--dark-gray);
+  color: var(--color-accent);
   text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: var(--margin-red);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
 a:visited {
-  color: var(--very-dark-gray);
+  color: var(--green-800);
 }
 
 a:hover {
-  color: var(--margin-red);
-  text-decoration: none;
+  color: var(--color-accent-hover);
 }
 
-.colophon {
+/* --- Focus-visible — keyboard-only focus ring --- */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }

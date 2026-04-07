@@ -1,10 +1,16 @@
 @import "remedy";
+@import "fonts";
 @import "variables";
 @import "layout";
 @import "header";
 @import "typography";
 @import "color";
 @import "animation";
+@import "pages";
 @import "contact";
 @import "footer";
 @import "doodles";
+
+@view-transition {
+  navigation: auto;
+}

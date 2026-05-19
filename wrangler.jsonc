@@ -1,0 +1,40 @@
+{
+    "name": "wjc",
+    "compatibility_date": "2026-05-01",
+    "compatibility_flags": ["nodejs_compat"],
+
+    // Worker entry point — handles /api/contact and falls through to static assets
+    "main": "./src/worker.js",
+
+    // Static assets (Eleventy build output)
+    "assets": {
+        "directory": "./_site/",
+        "binding": "ASSETS",
+        "not_found_handling": "404-page",
+        // Only invoke the Worker for API routes; everything else is served directly
+        "run_worker_first": ["/api/*"]
+    },
+
+    // Cloudflare Email Routing outbound binding — replace destination_address with
+    // a verified inbox in your Cloudflare Email Routing dashboard
+    "send_email": [
+        {
+            "name": "SEND_EMAIL",
+            "destination_address": "REPLACE_WITH_VERIFIED_DESTINATION_ADDRESS"
+        }
+    ],
+
+    // Non-secret env vars — override per environment if needed
+    "vars": {
+        // Must be a <something>@<your-CF-managed-domain> address
+        "CONTACT_FROM": "REPLACE_WITH_FROM_ADDRESS",
+        "CONTACT_TO": "REPLACE_WITH_TO_ADDRESS"
+    },
+
+    // Enable workers.dev subdomain for initial testing before custom domain
+    "workers_dev": true,
+
+    "observability": {
+        "enabled": true
+    }
+}

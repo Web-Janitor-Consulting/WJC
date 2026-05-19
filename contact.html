@@ -12,7 +12,14 @@ eleventyNavigation:
         <p>Tell me what you're working on. A rough idea is fine—we'll figure out the details together.</p>
     </header>
 
-    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <div class="contact-thanks" id="contact-thanks" hidden>
+        <p>Message sent! I'll be in touch soon.</p>
+    </div>
+    <div class="contact-error" id="contact-error" hidden>
+        <p>Something went wrong. Please try again or email me directly.</p>
+    </div>
+
+    <form class="contact-form" name="contact" method="POST" action="/api/contact">
         <p class="hidden" aria-hidden="true">
             <label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
         </p>
@@ -37,3 +44,15 @@ eleventyNavigation:
         </div>
     </form>
 </section>
+
+<script>
+(function () {
+    var p = new URLSearchParams(location.search);
+    if (p.get('sent') === '1') {
+        document.getElementById('contact-thanks').hidden = false;
+        document.querySelector('.contact-form').hidden = true;
+    } else if (p.get('error') === '1') {
+        document.getElementById('contact-error').hidden = false;
+    }
+}());
+</script>

@@ -6,14 +6,16 @@
     "main": "index.js",
     "scripts": {
         "dev:clean": "rm -rf _site && mkdir -p _site/assets",
-        "dev:11ty": "eleventy --port 8080 --serve --incremental",
+        "dev:11ty": "eleventy --watch --incremental",
         "dev:css": "postcss assets/css/index.css -m -o _site/assets/css/main.css -w",
-        "dev:watchers": "run-p dev:css dev:11ty",
-        "dev": "run-s dev:watchers",
+        "dev:worker": "wrangler dev --live-reload",
+        "dev:watchers": "run-p dev:css dev:11ty dev:worker",
+        "dev": "run-s dev:clean dev:watchers",
         "prod": "run-s  prod:css prod:11ty",
         "prod:css": "postcss assets/css/index.css -m -o _site/assets/css/main.css",
         "prod:11ty": "eleventy",
-        "build": "run-s prod"
+        "build": "run-s prod",
+        "deploy": "wrangler deploy"
     },
     "repository": {
         "type": "git",
@@ -28,6 +30,8 @@
     "homepage": " https://github.com/Web-Janitor-Consulting/WJC#readme",
     "devDependencies": {
         "@11ty/eleventy": "^3.1.2",
+        "mimetext": "^3.0.16",
+        "wrangler": "^4.0.0",
         "@11ty/eleventy-fetch": "^5.1.0",
         "@11ty/eleventy-img": "^6.0.4",
         "@11ty/eleventy-navigation": "^1.0.4",

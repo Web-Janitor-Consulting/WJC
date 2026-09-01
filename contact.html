@@ -19,7 +19,10 @@ eleventyNavigation:
         <p>Something went wrong. Please try again or email me directly.</p>
     </div>
 
-    <form class="contact-form" name="contact" method="POST" action="/api/contact">
+    <!-- Netlify Forms — the live site still runs on Netlify; the Workers
+         /api/contact handler stays in-repo for when that migration lands. -->
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+        action="/contact/?sent=1">
         <p class="hidden" aria-hidden="true">
             <label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
         </p>

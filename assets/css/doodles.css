@@ -1,8 +1,0 @@
-/* Doodle system retired — classes kept as no-ops for markup compatibility */
-.doodle {
-  position: relative;
-}
-.doodle::before,
-.doodle::after {
-  display: none;
-}

@@ -20,8 +20,23 @@
 .page-header h1,
 .page-header h2 {
   margin-top: 0;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-heading);
   font-size: clamp(2rem, 4vw, 2.75rem);
   letter-spacing: -0.02em;
+}
+
+/* Short red kicker bar under the page title */
+.page-header h1::after,
+.page-header h2::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 4px;
+  border-radius: 1px;
+  background: var(--color-accent);
+  margin-block-start: 0.85rem;
 }
 
 .page-header p {
@@ -46,19 +61,31 @@
 }
 
 /* ===================================================
-   Services page
+   Services page — numbered sections, echoes home steps
    =================================================== */
-.service-detail {
-  padding-block: clamp(1.25rem, 3vw, 2rem);
-  border-bottom: 1px solid var(--color-border);
+.services-page {
+  counter-reset: service;
 }
 
-.service-detail:first-of-type {
-  border-top: 1px solid var(--color-border);
+.service-detail {
+  padding-block: clamp(1.5rem, 3.5vw, 2.5rem);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .service-detail h2 {
   margin-block-end: 0.5rem;
+}
+
+.service-detail h2::before {
+  counter-increment: service;
+  content: counter(service, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--color-accent);
+  margin-block-end: 0.6rem;
 }
 
 .service-detail p {

@@ -40,42 +40,21 @@ h1 {
 }
 
 /* ===================================================
-   Hero — full-width, map-backed, commanding presence
+   Hero — typographic, paper ground, bucket-sign mark
    =================================================== */
 .hero {
-  position: relative;
-  overflow: hidden;
-  color: var(--white);
-  isolation: isolate;
-}
-
-/* Map background layer — the visual feature */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: url("/assets/img/map.jpg") center center / cover no-repeat;
-  z-index: -2;
-}
-
-/* Gradient overlay — gentle scrim for text legibility */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(15, 23, 42, 0.85) 0%,
-    rgba(15, 23, 42, 0.55) 55%,
-    rgba(15, 23, 42, 0.3) 100%
-  );
-  z-index: -1;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .hero-content {
   max-width: 68rem;
   margin-inline: auto;
-  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem)
-    clamp(3rem, 6vw, 5rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: clamp(2rem, 5vw, 4.5rem);
+  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 4vw, 3rem)
+    clamp(2.5rem, 6vw, 4.5rem);
 }
 
 .hero-intro {
@@ -83,6 +62,40 @@ h1 {
   flex-direction: column;
   gap: 1.25rem;
   max-width: 40rem;
+}
+
+/* --- Bucket-sign illustration, promoted from the footer --- */
+.hero-illustration {
+  width: clamp(11rem, 24vw, 17rem);
+}
+
+.hero-illustration svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Static, fully-drawn state */
+.hero-illustration .bucket,
+.hero-illustration .sign,
+.hero-illustration .puddle {
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  fill: var(--ink-950);
+  animation: none;
+}
+
+.hero-illustration .www,
+.hero-illustration .code {
+  fill: var(--color-accent);
+  animation: none;
+}
+
+.hero-illustration .drops,
+.hero-illustration .caution,
+.hero-illustration .raw {
+  opacity: 1;
+  animation: none;
 }
 
 /* --- Hero checklist --- */
@@ -106,10 +119,10 @@ h1 {
   position: absolute;
   left: 0;
   top: 0.55em;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--green-600);
+  width: 9px;
+  height: 9px;
+  border-radius: 1px;
+  background: var(--color-accent);
 }
 
 /* --- Hero actions --- */
@@ -124,7 +137,9 @@ h1 {
 /* ===================================================
    Button — solid, clean
    =================================================== */
-.button {
+.button,
+a.button:link,
+a.button:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +157,8 @@ h1 {
     transform 0.15s ease;
 }
 
-.button:hover {
+.button:hover,
+a.button:hover {
   background: var(--color-accent-hover);
   color: var(--white);
   transform: translateY(-1px);
@@ -154,40 +170,19 @@ h1 {
 }
 
 /* Outline variant */
-.button-outline {
+.button-outline,
+a.button-outline:link,
+a.button-outline:visited {
   background: transparent;
-  border: 1.5px solid currentColor;
+  border: 1.5px solid var(--ink-400);
+  color: var(--color-heading);
 }
 
-.button-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* Hero buttons — light on dark */
-.hero .button {
-  background: var(--white);
-  color: var(--slate-900);
-}
-
-.hero .button:hover {
-  background: var(--green-100);
-  color: var(--green-800);
-}
-
-.hero .button:focus-visible {
-  outline-color: var(--white);
-}
-
-.hero .button-outline {
-  background: transparent;
-  color: var(--slate-300);
-  border-color: var(--slate-400);
-}
-
-.hero .button-outline:hover {
-  color: var(--white);
-  border-color: var(--white);
-  background: rgba(255, 255, 255, 0.08);
+.button-outline:hover,
+a.button-outline:hover {
+  background: var(--paper-100);
+  border-color: var(--color-heading);
+  color: var(--color-heading);
 }
 
 .text-link {
@@ -231,7 +226,7 @@ h1 {
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--slate-500);
+  color: var(--color-accent);
 }
 
 .section-title {
@@ -244,7 +239,7 @@ h1 {
 }
 
 /* ===================================================
-   Cards — clean, no-nonsense panels
+   Cards — warm panels, red kicker bar
    =================================================== */
 .list-cards {
   list-style: none;
@@ -260,19 +255,28 @@ h1 {
   background: var(--color-surface);
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
+  box-shadow: 3px 3px 0 rgba(22, 24, 29, 0.06);
 }
 
-/* Remove folded corner */
 .list-cards li::after {
   display: none;
 }
 
 .list-cards li h3 {
-  color: var(--slate-900);
+  color: var(--color-heading);
+}
+
+.list-cards li h3::before {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 3px;
+  background: var(--color-accent);
+  margin-block-end: 0.7rem;
 }
 
 /* ===================================================
-   Process Steps — numbered with left accent
+   Process Steps — big red numerals
    =================================================== */
 .process-steps {
   list-style: none;
@@ -288,7 +292,7 @@ h1 {
   position: relative;
   padding: clamp(1.25rem, 2vw, 1.75rem) 1.25rem clamp(1.25rem, 2vw, 1.75rem)
     1.25rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-border);
 }
 
 .process-steps li::before {
@@ -297,22 +301,22 @@ h1 {
   display: block;
   font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  color: var(--green-700);
+  font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+  line-height: 1;
+  color: var(--color-accent);
   margin-block-end: 0.75rem;
 }
 
 /* ===================================================
-   CTA — full-width band
+   CTA — full-width ink band
    =================================================== */
 .section-cta {
   max-width: none;
   text-align: center;
   gap: clamp(1rem, 2vw, 1.5rem);
   padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
-  background: var(--slate-900);
-  color: var(--slate-300);
+  background: var(--color-band);
+  color: var(--color-band-text);
 }
 
 .section-cta .section-title {
@@ -336,15 +340,8 @@ h1 {
   align-items: center;
 }
 
-/* CTA button uses same light-on-dark as hero */
-.section-cta .button {
-  background: var(--white);
-  color: var(--slate-900);
-}
-
-.section-cta .button:hover {
-  background: var(--green-100);
-  color: var(--green-800);
+.section-cta .button:focus-visible {
+  outline-color: var(--white);
 }
 
 /* ===================================================
@@ -352,8 +349,15 @@ h1 {
    =================================================== */
 @media (max-width: 640px) {
   .hero-content {
-    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 3vw, 1.5rem)
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    padding: clamp(2.5rem, 8vw, 4rem) clamp(1rem, 3vw, 1.5rem)
       clamp(2rem, 5vw, 3rem);
+  }
+
+  .hero-illustration {
+    width: min(55%, 13rem);
+    margin-inline: auto;
   }
 
   .hero-actions {

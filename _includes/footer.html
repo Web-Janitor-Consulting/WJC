@@ -2,9 +2,11 @@
     <hr class="footer-rule" aria-hidden="true">
 
     <div class="footer-body">
+        {% unless page.url == "/" %}
         <div class="footer-illustration" aria-hidden="true">
             {% include "bucket-sign.html" %}
         </div>
+        {% endunless %}
 
         <div class="footer-content">
 

@@ -4,7 +4,7 @@
     "url": "https://www.webjanitor.consulting",
     "img": "https://www.webjanitor.consulting/assets/img/social.jpg",
     "img_alt": "Mop and bucket with 'WWW' sticker and floor sign that says 'Caution: Raw HTML'.",
-    "twitter_card_type": "summmary",
+    "twitter_card_type": "summary_large_image",
     "twitter_handle": "miklb",
     "name": "Michael Bishop",
     "generator": "Eleventy"

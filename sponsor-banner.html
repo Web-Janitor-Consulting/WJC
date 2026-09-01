@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sponsor Banner</title>
+    <style>
+        /* 1120x280 Tampa Monitor newsletter banner — screenshot this page
+           at 1120x280 to produce the image. Matches the site palette. */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: "DM Sans";
+            font-style: normal;
+            font-weight: 400 700;
+            src: url("/assets/fonts/dm-sans-latin.woff2") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            src: url("/assets/fonts/inter-regular.woff2") format("woff2");
+        }
+
+        html,
+        body {
+            width: 1120px;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        body {
+            background: #faf8f2;
+            color: #16181d;
+            border-top: 10px solid #d2202e;
+            display: flex;
+            align-items: center;
+        }
+
+        .banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            width: 100%;
+            padding: 0 64px 0 72px;
+        }
+
+        h1 {
+            font-family: "DM Sans", sans-serif;
+            font-weight: 700;
+            font-size: 46px;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        .kicker {
+            width: 64px;
+            height: 6px;
+            border-radius: 2px;
+            background: #d2202e;
+            margin: 16px 0;
+        }
+
+        .nb { white-space: nowrap; }
+
+        .tagline {
+            font-family: "Inter", sans-serif;
+            font-size: 21px;
+            line-height: 1.4;
+            color: #5f646c;
+        }
+
+        .url {
+            font-family: "DM Sans", sans-serif;
+            font-weight: 600;
+            font-size: 21px;
+            color: #d2202e;
+            white-space: nowrap;
+            align-self: flex-end;
+            padding-bottom: 44px;
+        }
+
+        .banner-illustration {
+            flex: 0 0 190px;
+        }
+
+        .banner-illustration svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .banner-illustration .bucket,
+        .banner-illustration .sign,
+        .banner-illustration .puddle {
+            fill: #16181d;
+        }
+
+        .banner-illustration .www,
+        .banner-illustration .code {
+            fill: #d2202e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Web Janitor Consulting</h1>
+            <div class="kicker"></div>
+            <p class="tagline"><span class="nb">Web development</span> · <span class="nb">Data systems</span> · <span class="nb">Technology consulting</span></p>
+        </div>
+        <p class="url">webjanitor.consulting</p>
+        <div class="banner-illustration">
+            {% include "bucket-sign.html" %}
+        </div>
+    </div>
+</body>
+
+</html>

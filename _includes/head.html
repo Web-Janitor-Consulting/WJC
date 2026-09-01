@@ -1,11 +1,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#faf8f2">
 	<link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
 	<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 	{% metagen meta %}
 
+	<link rel="preload" href="/assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" href="/assets/css/main.css">
-	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend:
-		site.github.url | prepend: site.url }}">
 </head>

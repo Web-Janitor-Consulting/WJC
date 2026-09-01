@@ -9,7 +9,6 @@
 @import "pages";
 @import "contact";
 @import "footer";
-@import "doodles";
 
 @view-transition {
   navigation: auto;

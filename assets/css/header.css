@@ -8,6 +8,7 @@
   top: 0;
   z-index: 100;
   width: 100%;
+  border-top: 4px solid var(--color-accent);
   border-bottom: 1px solid var(--color-border);
   background: var(--color-surface);
 }
@@ -95,6 +96,9 @@
 /* Active nav link */
 .mainnav a[aria-current="page"] {
   color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
 }
 
 /* Mobile header */

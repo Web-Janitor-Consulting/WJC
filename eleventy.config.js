@@ -6,23 +6,15 @@ import pluginRss from "@11ty/eleventy-plugin-rss";
 
 
 export default function(eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("assets/img");
+    // Only the images production pages actually reference — source art
+    // (.pxd/.psd, unused PNGs/SVGs) stays out of the deployed site.
+    eleventyConfig.addPassthroughCopy("assets/img/favicon.ico");
+    eleventyConfig.addPassthroughCopy("assets/img/apple-touch-icon.png");
+    eleventyConfig.addPassthroughCopy("assets/img/social.jpg");
     eleventyConfig.addPassthroughCopy("assets/fonts");
-    eleventyConfig.addPassthroughCopy("assets/js");
 
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(EleventyRenderPlugin);
     eleventyConfig.addPlugin(metagen);
     eleventyConfig.addPlugin(pluginRss);
-
-    eleventyConfig.setBrowserSyncConfig({
-        middleware: [
-            function(req, res, next) {
-                if (/^[^.]+$/.test(req.url)) {
-                    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-                }
-                next();
-            }
-        ]
-    });
 };

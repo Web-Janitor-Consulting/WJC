@@ -26,7 +26,7 @@ h3 {
 
 .hero h2 {
   margin: 0;
-  color: var(--white);
+  color: var(--color-heading);
   font-size: clamp(2.25rem, 5.5vw, 3.25rem);
   line-height: 1.1;
   letter-spacing: -0.025em;
@@ -34,13 +34,13 @@ h3 {
 }
 
 .hero .lede {
-  color: var(--slate-300);
+  color: var(--color-muted);
   font-size: clamp(1.05rem, 1.8vw, 1.2rem);
   line-height: 1.7;
 }
 
 .hero-checklist li {
-  color: var(--slate-300);
+  color: var(--color-text);
 }
 
 .eyebrow {
@@ -49,7 +49,7 @@ h3 {
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--green-600);
+  color: var(--color-accent);
   margin: 0;
   line-height: var(--rule);
 }
@@ -93,7 +93,7 @@ h3 {
 .section-cta .section-body p {
   margin: 0 auto;
   max-width: 48ch;
-  color: var(--slate-300);
+  color: var(--color-band-text);
 }
 
 .text-link {
@@ -109,7 +109,7 @@ code {
     "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
     monospace;
   font-size: 0.95em;
-  background: var(--slate-100);
+  background: var(--paper-100);
   padding: 0.1rem 0.4rem;
   border-radius: 4px;
   border: 1px solid var(--color-border);

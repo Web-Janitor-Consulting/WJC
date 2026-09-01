@@ -4,12 +4,28 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OG Background</title>
+    <title>OG Card</title>
     <style>
+        /* 1200x630 social card — screenshot this page to produce
+           assets/img/social.jpg. Matches the site palette. */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: "DM Sans";
+            font-style: normal;
+            font-weight: 400 700;
+            src: url("/assets/fonts/dm-sans-latin.woff2") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            src: url("/assets/fonts/inter-regular.woff2") format("woff2");
         }
 
         html,
@@ -20,29 +36,92 @@
         }
 
         body {
-            background-image:
-                linear-gradient(90deg,
-                    transparent 0%,
-                    transparent 12%,
-                    rgb(243, 197, 147) 12%,
-                    rgb(243, 197, 147) calc(12% + 2px),
-                    transparent calc(12% + 2px),
-                    transparent calc(12% + 6px),
-                    rgb(243, 197, 147) calc(12% + 6px),
-                    rgb(243, 197, 147) calc(12% + 8px),
-                    transparent calc(12% + 8px),
-                    transparent 100%),
-                linear-gradient(180deg, rgb(251, 238, 159) 100px, transparent 80px),
-                repeating-linear-gradient(180deg,
-                    rgb(201, 215, 152) 0px,
-                    rgb(201, 215, 152) 2px,
-                    transparent 2px,
-                    transparent 32px),
-                linear-gradient(rgb(251, 238, 159), rgb(251, 238, 159));
+            background: #faf8f2;
+            color: #16181d;
+            border-top: 14px solid #d2202e;
+            display: flex;
+            align-items: center;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            width: 100%;
+            padding: 0 88px 0 96px;
+        }
+
+        .card-text {
+            max-width: 660px;
+        }
+
+        h1 {
+            font-family: "DM Sans", sans-serif;
+            font-weight: 700;
+            font-size: 82px;
+            line-height: 1.04;
+            letter-spacing: -0.025em;
+        }
+
+        .kicker {
+            width: 96px;
+            height: 10px;
+            border-radius: 2px;
+            background: #d2202e;
+            margin: 36px 0;
+        }
+
+        .tagline {
+            font-family: "Inter", sans-serif;
+            font-size: 31px;
+            line-height: 1.4;
+            color: #5f646c;
+        }
+
+        .url {
+            font-family: "DM Sans", sans-serif;
+            font-weight: 600;
+            font-size: 28px;
+            color: #d2202e;
+            margin-top: 40px;
+        }
+
+        .card-illustration {
+            flex: 0 0 330px;
+        }
+
+        .card-illustration svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-illustration .bucket,
+        .card-illustration .sign,
+        .card-illustration .puddle {
+            fill: #16181d;
+        }
+
+        .card-illustration .www,
+        .card-illustration .code {
+            fill: #d2202e;
         }
     </style>
 </head>
 
-<body></body>
+<body>
+    <div class="card">
+        <div class="card-text">
+            <h1>Web Janitor Consulting</h1>
+            <div class="kicker"></div>
+            <p class="tagline">Web development · Data systems · Technology consulting</p>
+            <p class="url">webjanitor.consulting</p>
+        </div>
+        <div class="card-illustration">
+            {% include "bucket-sign.html" %}
+        </div>
+    </div>
+</body>
 
 </html>

@@ -1,5 +1,5 @@
 body {
-  background: var(--white);
+  background: var(--color-bg);
   color: var(--color-text);
 }
 
@@ -11,7 +11,7 @@ a:link {
 }
 
 a:visited {
-  color: var(--green-800);
+  color: var(--red-800);
 }
 
 a:hover {

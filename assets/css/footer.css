@@ -30,6 +30,16 @@
   margin-inline: auto;
 }
 
+/* Home footer has no illustration (it lives in the hero) — center the text */
+.footer-body:not(:has(.footer-illustration)) {
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-body:not(:has(.footer-illustration)) .footer-content {
+  align-items: center;
+}
+
 /* --- Bucket-sign illustration — static, no animation --- */
 .footer-illustration {
   flex: 0 0 auto;
